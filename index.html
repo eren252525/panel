@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Çağrı Lift Giriş</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        input[type="password"], button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "eren") {
+                document.getElementById("status").innerText = "Şifre doğru, 3 saniye bekleyiniz...";
+                setTimeout(() => {
+                    window.location.href = "panel.html";
+                }, 3000);
+            } else {
+                document.getElementById("status").innerText = "Hatalı şifre!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Çağrı Lift Asansör</h1>
+    <input type="password" id="password" placeholder="Şifre giriniz">
+    <button onclick="checkPassword()">Giriş Yap</button>
+    <p id="status"></p>
+</body>
+</html>
